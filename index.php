@@ -11,7 +11,7 @@ include "covid_19_tracker_logic.php";
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="daily_cases.js"></script>
     <script src="total_cases.js"></script>
-    
+
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -47,85 +47,84 @@ include "covid_19_tracker_logic.php";
     })
     </script>
 
-<script
-  type="text/javascript"
-  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
-></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"></script>
 
     <title>Covid-19 Tracker</title>
 </head>
 
 <body>
-    
 
-   
+
+
 
     <div class="container-fluid" id="home">
-        <div class="container-fluid text-center text-white  py-3" style="background-color:black">
+        
+        <div class="container-fluid text-center text-white py-3 " style="background-color:black;min-width:425px;" >
             <h1>Covid-19 Tracker</h1>
             <h4>Get accurate data on this Website</h4>
         </div>
 
         <div class="container ">
-            <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 text-center  my-4 ">
-                <div class="col ">
-                    <div class=" text-secondary py-4 clickable shadow" id="confirmed">
-                        <h5>Confirmed</h5>
+           
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2 row-cols-lg-4 g-2 g-lg-3  text-center  my-4 " style="min-width:411px">
+                    <div class="col ">
+                        <div class=" text-secondary py-4 clickable shadow" id="confirmed">
+                            <h5>Confirmed</h5>
 
-                        <div style="justify-content:center,align-items:center">
-                            <i class="fa fa-arrow-up"></i>
-                            <small class="text-secondary  counter"
-                                data-target="<?php echo $data['cases_time_series'][$days_count]['dailyconfirmed'];?>">
-                                0
-                            </small>
+                            <div style="justify-content:center,align-items:center">
+                                <i class="fa fa-arrow-up"></i>
+                                <small class="text-secondary  counter"
+                                    data-target="<?php echo $data['cases_time_series'][$days_count]['dailyconfirmed'];?>">
+                                    0
+                                </small>
+                            </div>
+                            <h2 class="counter" data-target="<?php  echo $data['statewise'][0]['confirmed'];?>">0</h2>
                         </div>
-                        <h2 class="counter" data-target="<?php  echo $data['statewise'][0]['confirmed'];?>">0</h2>
                     </div>
-                </div>
 
-                <div class="col ">
-                    <div class=" text-info py-4 clickable shadow" id="active">
-                        <h5>Active</h5>
-                        <small>&nbsp;</small>
-                        <h2 class="counter" data-target="<?php  echo $data['statewise'][0]['active'];?>">0</h2>
-                    </div>
-                </div>
-
-                <div class="col ">
-                    <div class="text-success py-4 clickable shadow" id="recovered">
-                        <h5>Recovered</h5>
-                        <div style="justify-content:center,align-items:center">
-                            <i class="fa fa-arrow-up"></i>
-                            <small class="text-success counter"
-                                data-target="<?php echo $data['cases_time_series'][$days_count]['dailyrecovered'];?>">
-                                0
-                            </small>
+                    <div class="col ">
+                        <div class=" text-info py-4 clickable shadow" id="active">
+                            <h5>Active</h5>
+                            <small>&nbsp;</small>
+                            <h2 class="counter" data-target="<?php  echo $data['statewise'][0]['active'];?>">0</h2>
                         </div>
-                        <h2 class="counter" data-target="<?php  echo $data['statewise'][0]['recovered'];?>">0</h2>
                     </div>
-                </div>
 
-                <div class="col ">
-                    <div class="col text-danger py-4 clickable shadow" id="deaths">
-                        <h5>Deceased</h5>
-                        <div style="justify-content:center,align-items:center">
-                            <i class="fa fa-arrow-up"></i>
-                            <small class="text-danger counter"
-                                data-target="<?php echo $data['cases_time_series'][$days_count]['dailydeceased'];?>">
-                                0
-                            </small>
+                    <div class="col ">
+                        <div class="text-success py-4 clickable shadow" id="recovered">
+                            <h5>Recovered</h5>
+                            <div style="justify-content:center,align-items:center">
+                                <i class="fa fa-arrow-up"></i>
+                                <small class="text-success counter"
+                                    data-target="<?php echo $data['cases_time_series'][$days_count]['dailyrecovered'];?>">
+                                    0
+                                </small>
+                            </div>
+                            <h2 class="counter" data-target="<?php  echo $data['statewise'][0]['recovered'];?>">0</h2>
                         </div>
-                        <h2 class="counter" data-target="<?php  echo $data['statewise'][0]['deaths'];?>">0</h2>
+                    </div>
+
+                    <div class="col ">
+                        <div class="col text-danger py-4 clickable shadow" id="deaths">
+                            <h5>Deceased</h5>
+                            <div style="justify-content:center,align-items:center">
+                                <i class="fa fa-arrow-up"></i>
+                                <small class="text-danger counter"
+                                    data-target="<?php echo $data['cases_time_series'][$days_count]['dailydeceased'];?>">
+                                    0
+                                </small>
+                            </div>
+                            <h2 class="counter" data-target="<?php  echo $data['statewise'][0]['deaths'];?>">0</h2>
+                        </div>
                     </div>
                 </div>
-
-            </div>
+            
         </div>
-        <div class="container ">
+        <div class="container">
             <div class="row row-cols-1 row-cols-lg-2 g-5 g-lg-5 text-center">
-                <div class=" col  ">
+                <div class=" col px-0 me-5"  style="max-width:600px">
 
-                    <div class="container py-4 text-center" style="color:black">
+                    <div class="container py-4 px-0 text-center" style="color:black">
                         <h3>Statewise Covid-19 Data Table</h3>
                     </div>
                     <table class="table table-striped table-hover ">
@@ -177,12 +176,12 @@ include "covid_19_tracker_logic.php";
                     </table>
                 </div>
 
-                <div class="col">
+                <div class="col me-0 pe-0" style="min-width:400px">
                     <div class=" container d-flex justify-content-between pt-4  px-1" style="height:110px">
                         <div>
                             <h2 style="color:black">India</h2>
                             <p style="color:#928080d1">Last Updated At:<?php $current_time_stamp=$data['tested'][$last_entry]['updatetimestamp'];
-                                echo ' '.substr($current_time_stamp,1,15);
+                                echo ' '.substr($current_time_stamp,0,15);
                                  ?>
                             </p>
                         </div>
@@ -192,7 +191,7 @@ include "covid_19_tracker_logic.php";
                                 echo $total_testing;
                                  ?>
                             </h5>
-                            <p style="color:#99a4e4">As of <?php echo  ' '.substr($current_time_stamp,1,10); ?> </p>
+                            <p style="color:#99a4e4">As of <?php echo  ' '.substr($current_time_stamp,0,10); ?> </p>
                         </div>
                     </div>
                     <div class="container text-danger my-4 rounded " style="background-color:#ffa9a96b">
@@ -203,19 +202,19 @@ include "covid_19_tracker_logic.php";
                         </h5>
 
                     </div>
-                    <div id="container">
-                        <h3 class="text-center my-3 " style="color: #940606;">Spread Trends</h3>
+                    <div id="container" >
+                        <h3 class="text-center my-3  " style="color: #940606;">Spread Trends</h3>
                         <div class=" d-flex container justify-content-center my-4">
                             <a id="total_Confirmed" class="btn  w-25 mx-2 p-2 shadow"
-                                style="background-color: #ff6e0891" href="#chart" role="button">
+                                style="background-color: #ff6e0891; min-width: 102px;" href="#chart" role="button">
                                 Cumulative
                             </a>
                             <a id="daily_Confirmed" class="btn  w-25 mx-2 p-2 shadow"
-                                style="background-color: #ffc10791" href="#chart1" role="button">
+                                style="background-color: #ffc10791;min-width: 60px;" href="#chart1" role="button">
                                 Daily
                             </a>
                         </div>
-                        <div id="cumulative" class=" container collapse show px-0" data-bs-parent="#container">
+                        <div id="cumulative" class=" container  collapse show px-0" data-bs-parent="#container">
 
                             <canvas id="totalconfirmed" class="my-4 "></canvas>
                             <canvas id="totalactive" class="my-4"></canvas>
@@ -245,7 +244,7 @@ include "covid_19_tracker_logic.php";
         </div>
     </div>
 
-    
+
     <!-- Java script for counters -->
     <script src="counter.js"></script>
 
